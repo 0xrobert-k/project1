@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Question</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffd6dc; /* Light pink background */
+            font-family: Arial, sans-serif;
+        }
+        
+        .question {
+            font-size: 2.5rem;
+            color: #d13b50; /* Red-pink color */
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .yes-btn {
+            background-color: #4CAF50; /* Green */
+        }
+        
+        .no-btn {
+            background-color: #f44336; /* Red */
+        }
+        
+        .gif-container {
+            max-width: 300px;
+        }
+        
+        .gif-container img {
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Make the No button move away when hovered */
+        .no-btn {
+            position: relative;
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="question">Would you be my little girl?</div>
+    
+    <div class="buttons">
+        <button class="btn yes-btn" onclick="yesClicked()">Yes</button>
+        <button class="btn no-btn" id="noBtn" onmouseover="moveButton()">No</button>
+    </div>
+    
+    <div class="gif-container">
+        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTNpOGVwaG9jczdmZ3d6cGxkZ2w1eXlqZmNtYjNqZWY5azEzajEwcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/c76IJLufpNwSULPk77/giphy.gif" alt="Cute GIF">
+    </div>
+
+    <script>
+        function yesClicked() {
+            window.location.href = "success.html";
+        }
+        
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
